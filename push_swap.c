@@ -6,8 +6,18 @@
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 12:36:38 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/07/25 12:36:48 by cglanvil         ###   ########.fr       */
+/*   Updated: 2019/07/26 12:53:45 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft/libft.h"
 
+int	main(int argc, char *argv[])
+{
+	if (argc == 2)
+	{
+		ft_putstr(argv[1]);
+		ft_putstr("\nyay!\n");
+	}
+	return (0);
+}
