@@ -6,7 +6,7 @@
 #    By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/26 11:10:57 by cglanvil          #+#    #+#              #
-#    Updated: 2019/07/26 12:46:54 by cglanvil         ###   ########.fr        #
+#    Updated: 2019/07/29 09:25:23 by cglanvil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,5 @@ all:
 clean:
 	rm -f *.o
 fclean: clean
-	rm -f $(LIBNAME)
-	rm -f $(CNAME)
-	rm -f $(PSNAME)
+	rm -f $(LIBNAME) $(CNAME) $(PSNAME)
 re: fclean all
