@@ -6,7 +6,7 @@
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/26 11:02:49 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/07/26 13:41:39 by cglanvil         ###   ########.fr       */
+/*   Updated: 2019/07/30 14:42:18 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	test(int *table, int len)
 	i = 1;
 	while (i < len)
 	{
-		if (table[i] < table [i-1])
+		if (table[i] < table[i - 1])
 			return (0);
 		i++;
 	}
@@ -40,7 +40,8 @@ int	checker(char **array)
 		return (-1);
 	while (array[i] != '\0')
 	{
-		table[i] = ft_atoi(array[i]);
+		if ((table[i] = ft_atoi(array[i])) == (int)NULL)
+			return (-1);
 		i++;
 	}
 	if (len == 1)
@@ -53,19 +54,24 @@ int	checker(char **array)
 int	main(int argc, char *argv[])
 {
 	char	**array;
+
 	if (argc > 1)
 	{
 		if (argc == 2)
 		{
 			array = ft_strsplit(argv[1], ' ');
-			if(checker(array))
+			if (checker(array) == -1)
+				ft_putstr("ERROR\n");
+			else if (checker(array) == 1)
 				ft_putstr("OK\n");
 			else
 				ft_putstr("KO\n");
 		}
 		else
 		{
-			if(checker(argv + 1))
+			if (checker(argv + 1) == -1)
+				ft_putstr("ERROR\n");
+			else if (checker(argv + 1) == 1)
 				ft_putstr("OK\n");
 			else
 				ft_putstr("KO\n");
