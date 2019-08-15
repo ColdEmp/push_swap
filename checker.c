@@ -6,7 +6,7 @@
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/26 11:02:49 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/07/30 14:42:18 by cglanvil         ###   ########.fr       */
+/*   Updated: 2019/08/15 17:58:40 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,15 @@ int	checker(char **array)
 	if (!test(table, len))
 		return (0);
 	return (1);
+}
+
+t_list	*createList(char **array)
+{
+	T-list	*temp;
+
+	if (array[0] != '\0')
+		temp = ft_lstnew(ft_atoi(array[0]),sizeof(int));
+	return (
 }
 
 int	main(int argc, char *argv[])
