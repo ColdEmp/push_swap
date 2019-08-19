@@ -6,7 +6,7 @@
 #    By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/26 11:10:57 by cglanvil          #+#    #+#              #
-#    Updated: 2019/07/30 11:27:29 by cglanvil         ###   ########.fr        #
+#    Updated: 2019/08/19 15:30:26 by cglanvil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ PSNAME = push_swap
 LIBNAME = libft/libft.a
 CFILES = checker.c $(LIBNAME)
 PSFILES = push_swap.c $(LIBNAME)
-SRC = checker.c push_swap.c 
+SRC = checker.c push_swap.c
+HEADER = push_swap.h
 all: $(LIBNAME) $(CNAME) $(PSNAME)
 $(LIBNAME):
 	make -C libft
@@ -30,4 +31,4 @@ fclean: clean
 	make -C libft fclean
 re: fclean all
 norm:
-	norminette $(SRC)
+	norminette $(SRC) $(HEADER)

@@ -6,11 +6,11 @@
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/26 11:02:49 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/08/15 17:58:40 by cglanvil         ###   ########.fr       */
+/*   Updated: 2019/08/19 19:16:15 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include "push_swap.h"
 
 int	test(int *table, int len)
 {
@@ -51,13 +51,72 @@ int	checker(char **array)
 	return (1);
 }
 
-t_list	*createList(char **array)
+int	test_ilist(t_ilist *head)
 {
-	T-list	*temp;
+	t_ilist *temp;
 
-	if (array[0] != '\0')
-		temp = ft_lstnew(ft_atoi(array[0]),sizeof(int));
-	return (
+	temp = head;
+	while (temp->next)
+	{
+		if (temp->nbr > (temp->next)->nbr)
+			return (0);
+		temp = temp->next;
+	}
+	return (1);
+}
+
+t_ilist	*ilstnew(int nbr)
+{
+	t_ilist *temp;
+
+	if (!(temp = (t_ilist*)malloc(sizeof(t_ilist))))
+		return (NULL);
+	if (!(temp->nbr = (int)malloc(sizeof(int))))
+		return(NULL);
+	temp->nbr = nbr;
+	temp->next = NULL;
+	return (temp);
+}
+
+void	check_error(char **array)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (array[i])
+	{
+		j = 0;
+		while (array[i][j])
+		{
+			if (ft_isdigit(array[i][j]) != 1)
+				error_exit;
+			j++;
+		}
+		i++;
+	}
+}
+
+int	check_ilist(char **array)
+{
+	t_ilist	*head;
+	t_ilist	*temp;
+	int		i;
+
+	i = 0;
+	check_error(array);
+	head = ilstnew(ft_atoi(array[0]));
+	temp = head;
+	i = 1;
+	while (array[i])
+	{
+		temp->next = ilstnew(ft_atoi(array[i]));
+		temp = temp->next;
+		i++;
+	}
+	if (!test_ilist(head))
+		return (0);
+	return (1);
 }
 
 int	main(int argc, char *argv[])
@@ -69,18 +128,14 @@ int	main(int argc, char *argv[])
 		if (argc == 2)
 		{
 			array = ft_strsplit(argv[1], ' ');
-			if (checker(array) == -1)
-				ft_putstr("ERROR\n");
-			else if (checker(array) == 1)
+			if (check_ilist(array) == 1)
 				ft_putstr("OK\n");
 			else
 				ft_putstr("KO\n");
 		}
 		else
 		{
-			if (checker(argv + 1) == -1)
-				ft_putstr("ERROR\n");
-			else if (checker(argv + 1) == 1)
+			if (check_ilist(argv + 1) == 1)
 				ft_putstr("OK\n");
 			else
 				ft_putstr("KO\n");
