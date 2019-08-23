@@ -6,7 +6,7 @@
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 15:22:10 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/08/23 16:42:26 by cglanvil         ###   ########.fr       */
+/*   Updated: 2019/08/23 16:59:35 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,5 @@ typedef struct	s_stack
 }				t_stack;
 
 t_ilist			*intlstnew(int nbr);
+void			check_errors(char **array);
 #endif
