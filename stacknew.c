@@ -1,0 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stacknew.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/23 16:08:50 by cglanvil          #+#    #+#             */
+/*   Updated: 2019/08/23 16:25:17 by cglanvil         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+include "push_swap.h"
+
+t_stack	*stacknew(void)
+{
+	t_stack *temp;
+
+	if (!(temp = (t_stack*)malloc(sizeof(t_stack))))
+		return (NULL);
+	temp->a = NULL;
+	temp->b = NULL;
+	return (temp);
+}

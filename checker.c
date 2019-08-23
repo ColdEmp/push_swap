@@ -6,13 +6,13 @@
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/26 11:02:49 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/08/20 13:54:18 by cglanvil         ###   ########.fr       */
+/*   Updated: 2019/08/23 15:50:58 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	test_ilist(t_ilist *head)
+void	test_intlist(t_ilist *head)
 {
 	t_ilist *temp;
 
@@ -26,17 +26,23 @@ void	test_ilist(t_ilist *head)
 	OK;
 }
 
-t_ilist	*ilstnew(int nbr)
+void	check_dup(char **array)
 {
-	t_ilist *temp;
+	int	i;
+	int	j;
 
-	if (!(temp = (t_ilist*)malloc(sizeof(t_ilist))))
-		return (NULL);
-	if (!(temp->nbr = (int)malloc(sizeof(int))))
-		return (NULL);
-	temp->nbr = nbr;
-	temp->next = NULL;
-	return (temp);
+	i = 0;
+	while (array[i])
+	{
+		j = i + 1;
+		while (array[j])
+		{
+			if(ft_atoi(array[i]) == ft_atoi(array[j]))
+				ERROR_EXIT;
+			j++;
+		}
+		i++;
+	}
 }
 
 void	check_error(char **array)
@@ -61,23 +67,24 @@ void	check_error(char **array)
 	}
 }
 
-void	check_ilist(char **array)
+void	check_intlst(char **array)
 {
 	t_ilist	*head;
 	t_ilist	*temp;
 	int		i;
 
 	check_error(array);
-	head = ilstnew(ft_atoi(array[0]));
+	check_dup(array);
+	head = intlstnew(ft_atoi(array[0]));
 	temp = head;
 	i = 1;
 	while (array[i])
 	{
-		temp->next = ilstnew(ft_atoi(array[i]));
+		temp->next = intlstnew(ft_atoi(array[i]));
 		temp = temp->next;
 		i++;
 	}
-	test_ilist(head);
+	test_intlist(head);
 }
 
 int		main(int argc, char *argv[])
@@ -89,10 +96,10 @@ int		main(int argc, char *argv[])
 		if (argc == 2)
 		{
 			array = ft_strsplit(argv[1], ' ');
-			check_ilist(array);
+			check_intlst(array);
 		}
 		else
-			check_ilist(argv + 1);
+			check_intlst(argv + 1);
 	}
 	return (0);
 }
