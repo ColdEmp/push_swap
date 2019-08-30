@@ -6,18 +6,56 @@
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 12:36:38 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/07/26 12:53:45 by cglanvil         ###   ########.fr       */
+/*   Updated: 2019/08/30 17:35:12 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 
+void	sort(t_stack **stack)
+{
+
+}
+
+void	pop_intlst(char **array)
+{
+	t_stack	*stack;
+	t_ilist	*temp;
+	int		i;
+
+	check_errors(array);
+	stack = stacknew();
+	stack->a = intlstnew(ft_atoi(array[0]));
+	temp = stack->a;
+	i = 1;
+	while (array[i])
+	{
+		temp->next = intlstnew(ft_atoi(array[i]));
+		temp = temp->next;
+		i++;
+	}
+	sort(&stack);
+	ft_putchar('\n');
+	temp = stack->a;
+	while (temp)
+	{
+		ft_putendl(ft_itoa(temp->nbr));
+		temp = temp->next;
+	}
+}
+
 int	main(int argc, char *argv[])
 {
-	if (argc == 2)
+	char	**array;
+
+	if (argc > 1)
 	{
-		ft_putstr(argv[1]);
-		ft_putstr("\nyay!\n");
+		if (argc == 2)
+		{
+			array = ft_strsplit(argv[1], ' ');
+			pop_intlst(array);
+		}
+		else
+			pop_intlst(argv + 1);
 	}
-	return (0);
-}
+	return (0);}
