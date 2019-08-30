@@ -6,7 +6,7 @@
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/23 16:51:26 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/08/23 16:59:13 by cglanvil         ###   ########.fr       */
+/*   Updated: 2019/08/30 14:09:35 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	check_dup(char **array)
 		j = i + 1;
 		while (array[j])
 		{
-			if(ft_atoi(array[i]) == ft_atoi(array[j]))
+			if (ft_atoi(array[i]) == ft_atoi(array[j]))
 				ERROR_EXIT;
 			j++;
 		}

@@ -6,11 +6,11 @@
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/23 16:08:50 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/08/23 16:25:17 by cglanvil         ###   ########.fr       */
+/*   Updated: 2019/08/30 15:31:34 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-include "push_swap.h"
+#include "push_swap.h"
 
 t_stack	*stacknew(void)
 {
