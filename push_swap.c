@@ -6,7 +6,7 @@
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 12:36:38 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/08/30 17:35:12 by cglanvil         ###   ########.fr       */
+/*   Updated: 2019/09/02 08:59:40 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sort(t_stack **stack)
 {
-
+	
 }
 
 void	pop_intlst(char **array)
