@@ -6,7 +6,7 @@
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/26 11:02:49 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/08/30 16:59:49 by cglanvil         ###   ########.fr       */
+/*   Updated: 2019/09/02 17:59:46 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	read_cmd(t_stack **stack)
 		do_cmd(&*stack, cmd);
 }
 
-void	pop_intlst(char **array)
+void	pop_stack(char **array)
 {
 	t_stack	*stack;
 	t_ilist	*temp;
@@ -101,10 +101,10 @@ int		main(int argc, char *argv[])
 		if (argc == 2)
 		{
 			array = ft_strsplit(argv[1], ' ');
-			pop_intlst(array);
+			pop_stack(array);
 		}
 		else
-			pop_intlst(argv + 1);
+			pop_stack(argv + 1);
 	}
 	return (0);
 }
