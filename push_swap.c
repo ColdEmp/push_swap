@@ -6,15 +6,41 @@
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 12:36:38 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/09/02 08:59:40 by cglanvil         ###   ########.fr       */
+/*   Updated: 2019/09/02 15:31:03 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include "push_swap.h"
 
-void	sort(t_stack **stack)
+void	small_sort(t_stack **stack)
 {
-	
+	t_ilist	*temp;
+
+	temp = *stack->a;
+}
+
+int		size(t_stack *stack)
+{
+	int		i;
+	t_ilist	*temp;
+
+	i = 0;
+	temp = stack->a;
+	while (temp)
+	{
+		temp = temp->next;
+		i++;
+	}
+	return (i);
+}
+
+void	ini_sort(t_stack **stack)
+{
+	int size;
+
+	size = size(*stack);
+	if (size <= 5)
+		small_sort(&*stack);
 }
 
 void	pop_intlst(char **array)
@@ -34,8 +60,7 @@ void	pop_intlst(char **array)
 		temp = temp->next;
 		i++;
 	}
-	sort(&stack);
-	ft_putchar('\n');
+	ini_sort(&stack);
 	temp = stack->a;
 	while (temp)
 	{
@@ -44,7 +69,7 @@ void	pop_intlst(char **array)
 	}
 }
 
-int	main(int argc, char *argv[])
+int		main(int argc, char *argv[])
 {
 	char	**array;
 
@@ -58,4 +83,5 @@ int	main(int argc, char *argv[])
 		else
 			pop_intlst(argv + 1);
 	}
-	return (0);}
+	return (0);
+}
