@@ -6,7 +6,7 @@
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/23 16:51:26 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/08/30 14:09:35 by cglanvil         ###   ########.fr       */
+/*   Updated: 2019/09/03 10:54:48 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	check_dup(char **array)
 	}
 }
 
-void	check_input(char **array)
+void	check_valid_input(char **array)
 {
 	int	i;
 	int	j;
@@ -55,6 +55,6 @@ void	check_input(char **array)
 
 void	check_errors(char **array)
 {
-	check_input(array);
+	check_valid_input(array);
 	check_dup(array);
 }

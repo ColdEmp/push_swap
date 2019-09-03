@@ -6,7 +6,7 @@
 #    By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/26 11:10:57 by cglanvil          #+#    #+#              #
-#    Updated: 2019/08/30 15:41:20 by cglanvil         ###   ########.fr        #
+#    Updated: 2019/09/03 10:39:28 by cglanvil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ PSNAME = push_swap
 LIBFILE = libft/libft.a
 CFILES = checker.c
 PSFILES = push_swap.c
-SRC = intlstnew.c stacknew.c check_errors.c \
+SRC = intlstnew.c stacknew.c check_errors.c pop_stack.c read_cmd.c test_stack.c \
+	  print_stack.c \
 	  sa.c sb.c ss.c pa.c pb.c ra.c rb.c rr.c rra.c rrb.c rrr.c
 HEADER = push_swap.h
 all: $(LIBFILE) $(CNAME) $(PSNAME)

@@ -6,7 +6,7 @@
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 15:22:10 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/08/30 16:18:50 by cglanvil         ###   ########.fr       */
+/*   Updated: 2019/09/03 10:40:11 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,11 @@ typedef struct	s_stack
 
 t_ilist			*intlstnew(int nbr);
 t_stack			*stacknew(void);
+t_stack			*pop_stack(char **array);
+int				test_stack(t_stack *stack);
+void			read_cmd(t_stack **stack);
 void			check_errors(char **array);
+void			print_stack(t_stack *stack);
 void			sa(t_stack **stack);
 void			sb(t_stack **stack);
 void			ss(t_stack **stack);
