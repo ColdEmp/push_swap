@@ -6,7 +6,7 @@
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 12:36:38 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/09/02 15:31:03 by cglanvil         ###   ########.fr       */
+/*   Updated: 2019/09/03 14:59:34 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,57 @@
 
 void	small_sort(t_stack **stack)
 {
-	t_ilist	*temp;
+	t_ilist	*ta;
+	t_ilist *tb;
 
-	temp = *stack->a;
+	while (test_stack(*stack) != 1)
+	{
+		ta = (*stack)->a;
+		while (ta)
+		{
+			if (ta->next && (ta->nbr > (ta->next)->nbr))
+				sa(&*stack);
+			pb(&*stack);
+			ta = (*stack)->a;
+		}
+		tb = (*stack)->b;
+		while (tb)
+		{
+			if (tb->next && (tb->nbr < (tb->next)->nbr))
+				sb(&*stack);
+			pa(&*stack);
+			tb = (*stack)->b;
+		}
+	}
 }
 
-int		size(t_stack *stack)
+void	medium_sort(t_stack **stack)
+{
+	t_ilist	*ta;
+	t_ilist *tb;
+
+	while (test_stack(*stack) != 1)
+	{
+		ta = (*stack)->a;
+		while (ta)
+		{
+			if (ta->next && (ta->nbr > (ta->next)->nbr))
+				sa(&*stack);
+			pb(&*stack);
+			ta = (*stack)->a;
+		}
+		tb = (*stack)->b;
+		while (tb)
+		{
+			if (tb->next && (tb->nbr < (tb->next)->nbr))
+				sb(&*stack);
+			pa(&*stack);
+			tb = (*stack)->b;
+		}
+	}
+}
+
+int		list_size(t_stack *stack)
 {
 	int		i;
 	t_ilist	*temp;
@@ -38,50 +83,29 @@ void	ini_sort(t_stack **stack)
 {
 	int size;
 
-	size = size(*stack);
+	size = list_size(*stack);
 	if (size <= 5)
 		small_sort(&*stack);
-}
-
-void	pop_intlst(char **array)
-{
-	t_stack	*stack;
-	t_ilist	*temp;
-	int		i;
-
-	check_errors(array);
-	stack = stacknew();
-	stack->a = intlstnew(ft_atoi(array[0]));
-	temp = stack->a;
-	i = 1;
-	while (array[i])
-	{
-		temp->next = intlstnew(ft_atoi(array[i]));
-		temp = temp->next;
-		i++;
-	}
-	ini_sort(&stack);
-	temp = stack->a;
-	while (temp)
-	{
-		ft_putendl(ft_itoa(temp->nbr));
-		temp = temp->next;
-	}
+	else
+		medium_sort(&*stack);
 }
 
 int		main(int argc, char *argv[])
 {
 	char	**array;
+	t_stack *stack;
 
 	if (argc > 1)
 	{
 		if (argc == 2)
 		{
 			array = ft_strsplit(argv[1], ' ');
-			pop_intlst(array);
+			stack = pop_stack(array);
 		}
 		else
-			pop_intlst(argv + 1);
+			stack = pop_stack(argv + 1);
+		ini_sort(&stack);
+		//print_stack(stack);
 	}
 	return (0);
 }
