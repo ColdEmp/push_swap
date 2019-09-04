@@ -6,7 +6,7 @@
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 15:31:28 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/09/04 15:40:14 by cglanvil         ###   ########.fr       */
+/*   Updated: 2019/09/04 16:20:31 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	shift_left(t_stack **stack)
 	t_ilist *tb;
 
 	tb = (*stack)->b;
-	while (tb)
+	while (test_b(*stack) != 1)
 	{
 		if (tb->next && (tb->nbr < (tb->next)->nbr))
 		{
