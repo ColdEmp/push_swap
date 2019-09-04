@@ -6,7 +6,7 @@
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 15:22:10 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/09/03 10:40:11 by cglanvil         ###   ########.fr       */
+/*   Updated: 2019/09/04 15:42:58 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ t_ilist			*intlstnew(int nbr);
 t_stack			*stacknew(void);
 t_stack			*pop_stack(char **array);
 int				test_stack(t_stack *stack);
+int				test_a(t_stack *stack);
+int				test_b(t_stack *stack);
+int				list_size(t_stack *stack);
+void			shift_right(t_stack **stack);
+void			shift_left(t_stack **stack);
 void			read_cmd(t_stack **stack);
 void			check_errors(char **array);
 void			print_stack(t_stack *stack);

@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_list.c                                        :+:      :+:    :+:   */
+/*   shift_right.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/03 15:02:38 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/09/03 15:06:56 by cglanvil         ###   ########.fr       */
+/*   Created: 2019/09/04 15:21:29 by cglanvil          #+#    #+#             */
+/*   Updated: 2019/09/04 15:41:39 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	test_list(t_ilist *list)
+void	shift_right(t_stack **stack)
 {
-	t_ilist *temp;
+	t_ilist	*ta;
 
-	temp = list;
-	while (temp->next)
+	ta = (*stack)->a;
+	while (ta)
 	{
-		if (temp->nbr > (temp->next)->nbr)
-			return (0);
-		temp = temp->next;
+		if (ta->next && (ta->nbr > (ta->next)->nbr))
+		{
+			sa(&*stack);
+			ft_putendl("sa");
+		}
+		pb(&*stack);
+		ft_putendl("pb");
+		ta = (*stack)->a;
 	}
-	return (1);
 }
