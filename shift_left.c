@@ -6,7 +6,7 @@
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 15:31:28 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/09/04 16:20:31 by cglanvil         ###   ########.fr       */
+/*   Updated: 2019/09/11 13:39:42 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,11 @@ void	shift_left(t_stack **stack)
 			sb(&*stack);
 			ft_putendl("sb");
 		}
-		pa(&*stack);
-		ft_putendl("pa");
+		if (test_b(*stack) != 1)
+		{
+			pa(&*stack);
+			ft_putendl("pa");
+		}
 		tb = (*stack)->b;
 	}
 }

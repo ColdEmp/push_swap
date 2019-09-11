@@ -1,34 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   shift_right.c                                      :+:      :+:    :+:   */
+/*   merge.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 15:21:29 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/09/11 13:39:45 by cglanvil         ###   ########.fr       */
+/*   Created: 2019/09/11 13:42:09 by cglanvil          #+#    #+#             */
+/*   Updated: 2019/09/11 15:41:37 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	shift_right(t_stack **stack)
+void	push_left(t_stack **stack)
+{
+	while ((*stack)->b)
+	{
+		pa(&*stack);
+		ft_putendl("pa");
+	}
+}
+
+void	merge(t_stack **stack)
 {
 	t_ilist	*ta;
+	t_ilist	*tb;
 
-	ta = (*stack)->a;
-	while (test_a(*stack) != 1)
+	ta = (*stack)->a; 
+	tb = (*stack)->b;
+	if (tb->nbr < ta->nbr)
 	{
-		if (ta->next && (ta->nbr > (ta->next)->nbr))
+		push_left(&*stack);
+	}
+	while ((*stack)->b)
+	{
+		while (((*stack)->b)->nbr !> ((*stack)->a)->nbr
+			&& ((*stack)->b)->nbr !< (((*stack)->a)->next)->nbr)
 		{
-			sa(&*stack);
-			ft_putendl("sa");
+			rra(&*stack);
+			ft_putendl("rra");
 		}
-		if (test_a(*stack) != 1)
-		{
-			pb(&*stack);
-			ft_putendl("pb");
-		}
-		ta = (*stack)->a;
 	}
 }
