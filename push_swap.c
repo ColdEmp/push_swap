@@ -6,7 +6,7 @@
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 12:36:38 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/09/11 15:41:29 by cglanvil         ###   ########.fr       */
+/*   Updated: 2019/09/12 17:36:15 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ void	small_sort(t_stack **stack)
 {
 	while (test_stack(*stack) != 1)
 	{
+		while (test_a(*stack) != 1)
 			shift_right(&*stack);
+		while (test_b(*stack) != 1)
 			shift_left(&*stack);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 13:42:09 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/09/11 15:41:37 by cglanvil         ###   ########.fr       */
+/*   Updated: 2019/09/12 17:48:06 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,17 @@ void	push_left(t_stack **stack)
 
 void	merge(t_stack **stack)
 {
-	t_ilist	*ta;
-	t_ilist	*tb;
-
-	ta = (*stack)->a; 
-	tb = (*stack)->b;
-	if (tb->nbr < ta->nbr)
-	{
+	if ((*stack)->b->nbr < (*stack)->a->nbr)
 		push_left(&*stack);
-	}
 	while ((*stack)->b)
 	{
-		while (((*stack)->b)->nbr !> ((*stack)->a)->nbr
-			&& ((*stack)->b)->nbr !< (((*stack)->a)->next)->nbr)
+		while ((*stack)->b->nbr !> (*stack)->a->nbr
+			&& (*stack)->b->nbr !< (*stack)->a->next->nbr)
 		{
 			rra(&*stack);
 			ft_putendl("rra");
 		}
+		pa(&*stack);
+		ft_putendl("pa");
 	}
 }
