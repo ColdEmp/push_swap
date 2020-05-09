@@ -15,8 +15,8 @@ PSNAME = push_swap
 LIBFILE = libft/libft.a
 CFILES = checker.c
 PSFILES = push_swap.c
-SRC = intlstnew.c stacknew.c check_errors.c pop_stack.c read_cmd.c test_stack.c \
-	  print_stack.c test_a.c test_b.c list_size.c shift_right.c shift_left.c \
+SRC = ilistnew.c stacknew.c check_errors.c populate_stack.c read_cmd.c test_stack.c \
+	  print_stack.c test_a_sorted.c test_b_sorted.c list_size.c shift_right.c shift_left.c \
 	  sa.c sb.c ss.c pa.c pb.c ra.c rb.c rr.c rra.c rrb.c rrr.c
 HEADER = push_swap.h
 all: $(LIBFILE) $(CNAME) $(PSNAME)

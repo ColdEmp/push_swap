@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   intlstnew.c                                        :+:      :+:    :+:   */
+/*   ilistnew.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-t_ilist	*intlstnew(int nbr)
+t_ilist	*ilistnew(int nbr)
 {
 	t_ilist *temp;
 

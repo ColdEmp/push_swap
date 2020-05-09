@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pop_stack.c                                        :+:      :+:    :+:   */
+/*   sort_left.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/03 10:13:25 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/09/03 10:23:47 by cglanvil         ###   ########.fr       */
+/*   Created: 2019/09/04 17:14:30 by cglanvil          #+#    #+#             */
+/*   Updated: 2019/09/04 18:02:32 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*pop_stack(char **array)
+void    sort_left(t_stack **stack)
 {
-	t_stack	*stack;
-	t_ilist	*temp;
-	int		i;
-
-	check_errors(array);
-	stack = stacknew();
-	stack->a = intlstnew(ft_atoi(array[0]));
-	temp = stack->a;
-	i = 1;
-	while (array[i])
-	{
-		temp->next = intlstnew(ft_atoi(array[i]));
-		temp = temp->next;
-		i++;
-	}
-	return (stack);
+    
 }
+

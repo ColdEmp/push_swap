@@ -16,44 +16,44 @@ void	small_sort(t_stack **stack)
 {
 	while (test_stack(*stack) != 1)
 	{
-		while (test_a(*stack) != 1)
+		while (test_a_sorted(*stack) != 1)
 			shift_right(&*stack);
-		while (test_b(*stack) != 1)
+		while (test_b_sorted(*stack) != 1)
 			shift_left(&*stack);
 	}
 }
 
 void	medium_sort(t_stack **stack)
 {
-	t_ilist	*ta;
-	t_ilist *tb;
+	t_ilist	*heada;
+	t_ilist *headb;
 
-	while ((test_a(*stack) != 1) && (test_b(*stack) != 1))
+	while ((test_a_sorted(*stack) != 1) && (test_b_sorted(*stack) != 1))
 	{
-		ta = (*stack)->a;
-		while (ta)
+		heada = (*stack)->a;
+		while (heada)
 		{
-			if (ta->next && (ta->nbr > (ta->next)->nbr))
+			if (heada->next && (heada->nbr > (heada->next)->nbr))
 				sa(&*stack);
 			pb(&*stack);
-			ta = (*stack)->a;
+			heada = (*stack)->a;
 		}
-		tb = (*stack)->b;
-		while (tb)
+		headb = (*stack)->b;
+		while (headb)
 		{
-			if (tb->next && (tb->nbr < (tb->next)->nbr))
+			if (headb->next && (headb->nbr < (headb->next)->nbr))
 				sb(&*stack);
 			pa(&*stack);
-			tb = (*stack)->b;
+			headb = (*stack)->b;
 		}
 	}
 }
 
-void	ini_sort(t_stack **stack)
+void	initial_sort(t_stack **stack)
 {
-	int size;
+	// int size;
 
-	size = list_size(*stack);
+	// size = list_size(*stack);
 	//if (size <= 5)
 		small_sort(&*stack);
 	//else
@@ -70,11 +70,11 @@ int		main(int argc, char *argv[])
 		if (argc == 2)
 		{
 			array = ft_strsplit(argv[1], ' ');
-			stack = pop_stack(array);
+			stack = populate_stack(array);
 		}
 		else
-			stack = pop_stack(argv + 1);
-		ini_sort(&stack);
+			stack = populate_stack(argv + 1);
+		initial_sort(&stack);
 		print_stack(stack);
 	}
 	return (0);

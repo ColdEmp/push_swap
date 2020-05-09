@@ -1,16 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   slot_back.c                                        :+:      :+:    :+:   */
+/*   populate_stack.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cglanvil <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 17:14:30 by cglanvil          #+#    #+#             */
-/*   Updated: 2019/09/04 18:02:32 by cglanvil         ###   ########.fr       */
+/*   Created: 2019/09/03 10:13:25 by cglanvil          #+#    #+#             */
+/*   Updated: 2019/09/03 10:23:47 by cglanvil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	slot_back(t_stack **stack)
+t_stack	*populate_stack(char **array)
+{
+	t_stack	*stack;
+	t_ilist	*temp;
+	int		i;
 
+	check_errors(array);
+	stack = stacknew();
+	stack->a = ilistnew(ft_atoi(array[0]));
+	temp = stack->a;
+	i = 1;
+	while (array[i])
+	{
+		temp->next = ilistnew(ft_atoi(array[i]));
+		temp = temp->next;
+		i++;
+	}
+	return (stack);
+}

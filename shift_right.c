@@ -14,15 +14,15 @@
 
 void	shift_right(t_stack **stack)
 {
-	t_ilist	*ta;
+	t_ilist	*heada;
 
-	ta = (*stack)->a;
-	if (ta->next && (ta->nbr > ta->next->nbr))
+	heada = (*stack)->a;
+	if (heada->next && (heada->nbr > heada->next->nbr))
 	{
 		sa(&*stack);
 		ft_putendl("sa");
 	}
-	if (test_a(*stack) != 1)
+	if (test_a_sorted(*stack) != 1)
 	{
 		pb(&*stack);
 		ft_putendl("pb");

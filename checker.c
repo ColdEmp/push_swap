@@ -22,10 +22,10 @@ int		main(int argc, char *argv[])
 		if (argc == 2)
 		{
 			array = ft_strsplit(argv[1], ' ');
-			stack = pop_stack(array);
+			stack = populate_stack(array);
 		}
 		else
-			stack = pop_stack(argv + 1);
+			stack = populate_stack(argv + 1);
 		read_cmd(&stack);
 		ft_putchar('\n');
 		print_stack(stack);

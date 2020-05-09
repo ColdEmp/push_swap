@@ -29,12 +29,12 @@ typedef struct	s_stack
 	t_ilist	*b;
 }				t_stack;
 
-t_ilist			*intlstnew(int nbr);
+t_ilist			*ilistnew(int nbr);
 t_stack			*stacknew(void);
-t_stack			*pop_stack(char **array);
+t_stack			*populate_stack(char **array);
 int				test_stack(t_stack *stack);
-int				test_a(t_stack *stack);
-int				test_b(t_stack *stack);
+int				test_a_sorted(t_stack *stack);
+int				test_b_sorted(t_stack *stack);
 int				list_size(t_stack *stack);
 void			shift_right(t_stack **stack);
 void			shift_left(t_stack **stack);
