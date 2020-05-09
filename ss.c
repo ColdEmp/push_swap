@@ -17,3 +17,9 @@ void	ss(t_stack **stack)
 	sa(&*stack);
 	sb(&*stack);
 }
+
+void	ss_wo(t_stack **stack)
+{
+	ss(&*stack);
+	ft_putendl("ss");
+}

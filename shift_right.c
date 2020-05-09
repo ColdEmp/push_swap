@@ -18,13 +18,7 @@ void	shift_right(t_stack **stack)
 
 	heada = (*stack)->a;
 	if (heada->next && (heada->nbr > heada->next->nbr))
-	{
-		sa(&*stack);
-		ft_putendl("sa");
-	}
+		sa_wo(&*stack);
 	if (test_a_sorted(*stack) != 1)
-	{
-		pb(&*stack);
-		ft_putendl("pb");
-	}
+		pb_wo(&*stack);
 }

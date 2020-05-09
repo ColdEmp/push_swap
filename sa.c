@@ -25,3 +25,9 @@ void	sa(t_stack **stack)
 	node_2->next = node_1;
 	(*stack)->a = node_2;
 }
+
+void	sa_wo(t_stack **stack)
+{
+	sa(&*stack);
+	ft_putendl("sa");
+}

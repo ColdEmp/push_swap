@@ -17,3 +17,9 @@ void	rrr(t_stack **stack)
 	rra(&*stack);
 	rrb(&*stack);
 }
+
+void	rrr_wo(t_stack **stack)
+{
+	rrr(&*stack);
+	ft_putendl("rrr");
+}

@@ -29,3 +29,9 @@ void	rb(t_stack **stack)
 	node_2->next = node_1;
 	node_1->next = NULL;
 }
+
+void	rb_wo(t_stack **stack)
+{
+	rb(&*stack);
+	ft_putendl("rb");
+}

@@ -30,3 +30,9 @@ void	rrb(t_stack **stack)
 	node_2->next = (*stack)->b;
 	(*stack)->b = node_2;
 }
+
+void	rrb_wo(t_stack **stack)
+{
+	rrb(&*stack);
+	ft_putendl("rrb");
+}

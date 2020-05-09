@@ -30,3 +30,9 @@ void	rra(t_stack **stack)
 	node_2->next = (*stack)->a;
 	(*stack)->a = node_2;
 }
+
+void	rra_wo(t_stack **stack)
+{
+	rra(&*stack);
+	ft_putendl("rra");
+}

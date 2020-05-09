@@ -52,4 +52,15 @@ void			rr(t_stack **stack);
 void			rra(t_stack **stack);
 void			rrb(t_stack **stack);
 void			rrr(t_stack **stack);
+void			sa_wo(t_stack **stack);
+void			sb_wo(t_stack **stack);
+void			ss_wo(t_stack **stack);
+void			pa_wo(t_stack **stack);
+void			pb_wo(t_stack **stack);
+void			ra_wo(t_stack **stack);
+void			rb_wo(t_stack **stack);
+void			rr_wo(t_stack **stack);
+void			rra_wo(t_stack **stack);
+void			rrb_wo(t_stack **stack);
+void			rrr_wo(t_stack **stack);
 #endif

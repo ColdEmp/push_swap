@@ -18,13 +18,7 @@ void	shift_left(t_stack **stack)
 
 	headb = (*stack)->b;
 	if (headb->next && (headb->nbr < headb->next->nbr))
-	{
-		sb(&*stack);
-		ft_putendl("sb");
-	}
+		sb_wo(&*stack);
 	if (test_b_sorted(*stack) != 1)
-	{
-		pa(&*stack);
-		ft_putendl("pa");
-	}
+		pa_wo(&*stack);
 }

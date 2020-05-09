@@ -25,3 +25,9 @@ void	sb(t_stack **stack)
 	node_2->next = node_1;
 	(*stack)->b = node_2;
 }
+
+void	sb_wo(t_stack **stack)
+{
+	sb(&*stack);
+	ft_putendl("sb");
+}
