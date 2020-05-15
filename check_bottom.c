@@ -15,9 +15,6 @@ void    check_bottom(t_stack **stack)
     endb = pointb;
     while (endb && endb->next)
         endb = endb->next;
-    // if (pointa && pointa->nbr != enda->nbr && pointb && pointb->nbr != endb->nbr && (pointa->nbr > 
-    //         enda->nbr) && (pointb->nbr < pointb->next->nbr))
-    //     ;
     if (pointa && pointa->nbr != enda->nbr && (pointa->nbr > enda->nbr))
 		rra_wo(&*stack);//a, if the bottom number is smaller than the top, move the bottom to the top
     if (pointb && pointb->nbr != endb->nbr && (pointb->nbr < endb->nbr))

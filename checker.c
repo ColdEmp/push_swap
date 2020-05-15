@@ -27,7 +27,7 @@ int		main(int argc, char *argv[])
 		else
 			stack = populate_stack(argv + 1);
 		read_cmd(&stack);
-		print_stack(stack);
+		//print_stack(stack);
 		if (test_stack(stack) == -1)
 			ft_putendl("Error: b is not empty");
 		else if (test_stack(stack) == 0)

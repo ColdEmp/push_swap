@@ -14,12 +14,27 @@
 
 void	print_stack(t_stack *stack)
 {
-	t_ilist	*temp;
+	t_ilist	*tempa;
+	t_ilist	*tempb;
 
-	temp = stack->a;
-	while (temp)
+	tempa = stack->a;
+	tempb = stack->b;
+	system("clear");
+	ft_putendl("a\tb");
+	ft_putendl("-\t-");
+	while (tempa || tempb)
 	{
-		ft_putendl(ft_itoa(temp->nbr));
-		temp = temp->next;
+		if (tempa)
+		{
+			ft_putstr(ft_itoa(tempa->nbr));
+			tempa = tempa->next;
+		}
+		ft_putstr("\t");
+		if (tempb)
+		{
+			ft_putstr(ft_itoa(tempb->nbr));
+			tempb = tempb->next;
+		}
+		ft_putstr("\n");
 	}
 }

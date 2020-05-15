@@ -19,7 +19,7 @@ void merge(t_stack **stack)
 	enda = (*stack)->a;
 	while (enda->next)
 		enda = enda->next;
-	if ( (*stack)->b->nbr < (*stack)->a->nbr &&
+	if ( (*stack)->b && (*stack)->b->nbr < (*stack)->a->nbr &&
 			( (*stack)->b->nbr > enda->nbr || (*stack)->a->nbr < enda->nbr ) )
 		pa_wo(&*stack);
 	else //if ((*stack)->b->nbr < (*stack)->a->nbr && (*stack)->b->nbr < enda->nbr)

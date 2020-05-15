@@ -44,10 +44,12 @@ void	read_cmd(t_stack **stack)
 {
 	char	*cmd;
 
+	print_stack(*stack);
 	while (get_next_line(0, &cmd) > 0) //was 1 on mac
 	{
-		if (strcmp("", cmd) == 0)//added the if in windows
+		if (strcmp("", cmd) == 0) //added the if in windows
 			break;
 		do_cmd(&*stack, cmd);
+		print_stack(*stack);
 	}
 }
