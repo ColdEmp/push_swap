@@ -25,6 +25,6 @@ void	pb(t_stack **stack)
 
 void	pb_wo(t_stack **stack)
 {
-	pb(&*stack);
 	ft_putendl("pb");
+	pb(&*stack);
 }

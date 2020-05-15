@@ -14,11 +14,8 @@
 
 void	shift_left(t_stack **stack)
 {
-	t_ilist *headb;
-
-	headb = (*stack)->b;
-	if (headb->next && (headb->nbr < headb->next->nbr))
-		sb_wo(&*stack);
+	check_top(&*stack);
+    check_bottom(&*stack);
 	if (test_b_sorted(*stack) != 1)
 		pa_wo(&*stack);
 }

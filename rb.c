@@ -32,6 +32,6 @@ void	rb(t_stack **stack)
 
 void	rb_wo(t_stack **stack)
 {
-	rb(&*stack);
 	ft_putendl("rb");
+	rb(&*stack);
 }

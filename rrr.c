@@ -20,6 +20,6 @@ void	rrr(t_stack **stack)
 
 void	rrr_wo(t_stack **stack)
 {
-	rrr(&*stack);
 	ft_putendl("rrr");
+	rrr(&*stack);
 }

@@ -28,6 +28,6 @@ void	sa(t_stack **stack)
 
 void	sa_wo(t_stack **stack)
 {
-	sa(&*stack);
 	ft_putendl("sa");
+	sa(&*stack);
 }

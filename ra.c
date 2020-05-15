@@ -32,6 +32,6 @@ void	ra(t_stack **stack)
 
 void	ra_wo(t_stack **stack)
 {
-	ra(&*stack);
 	ft_putendl("ra");
+	ra(&*stack);
 }

@@ -24,7 +24,10 @@ void	check_dup(char **array)
 		while (array[j])
 		{
 			if (ft_atoi(array[i]) == ft_atoi(array[j]))
-				ERROR_EXIT;
+			{
+				ft_putendl("Error: found duplicate");
+				exit(1);
+			}
 			j++;
 		}
 		i++;
@@ -46,7 +49,10 @@ void	check_valid_input(char **array)
 					|| (j == 0 && array[i][j] == '-' &&
 					ft_isdigit(array[i][j + 1]) != 1)
 					|| (j > 0 && ft_isdigit(array[i][j]) != 1))
-				ERROR_EXIT;
+			{
+				ft_putendl("Error: not a valid input");
+				exit(1);
+			}
 			j++;
 		}
 		i++;

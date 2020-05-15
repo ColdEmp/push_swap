@@ -20,6 +20,6 @@ void	ss(t_stack **stack)
 
 void	ss_wo(t_stack **stack)
 {
-	ss(&*stack);
 	ft_putendl("ss");
+	ss(&*stack);
 }

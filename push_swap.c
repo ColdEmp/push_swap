@@ -49,15 +49,15 @@ void	medium_sort(t_stack **stack)
 	}
 }
 
-void	initial_sort(t_stack **stack)
+void	test(t_stack **stack)
 {
-	// int size;
+	// t_ilist *enda;
+	// // int size;
 
-	// size = list_size(*stack);
-	//if (size <= 5)
-		small_sort(&*stack);
-	//else
-	//	medium_sort(&*stack);
+	// enda = (*stack)->a;
+	// while(enda->next)
+	// 	enda = enda->next;
+	ft_putendl(ft_itoa(rate_position(&*stack, 4, 1)));
 }
 
 int		main(int argc, char *argv[])
@@ -74,8 +74,9 @@ int		main(int argc, char *argv[])
 		}
 		else
 			stack = populate_stack(argv + 1);
-		initial_sort(&stack);
-		print_stack(stack);
+		//test(&stack);
+		sort(&stack);
+		//print_stack(stack);
 	}
 	return (0);
 }

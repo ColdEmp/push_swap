@@ -12,28 +12,36 @@
 
 #include "push_swap.h"
 
-void	push_left(t_stack **stack)
+void merge(t_stack **stack)
 {
-	while ((*stack)->b)
-	{
-		pa(&*stack);
-		ft_putendl("pa");
-	}
+	t_ilist *enda;
+
+	enda = (*stack)->a;
+	while (enda->next)
+		enda = enda->next;
+	if ( (*stack)->b->nbr < (*stack)->a->nbr &&
+			( (*stack)->b->nbr > enda->nbr || (*stack)->a->nbr < enda->nbr ) )
+		pa_wo(&*stack);
+	else //if ((*stack)->b->nbr < (*stack)->a->nbr && (*stack)->b->nbr < enda->nbr)
+		rra_wo(&*stack);
+	// else if ((*stack)->b->nbr > (*stack)->a->nbr)
 }
 
-void	merge(t_stack **stack)
-{
-	if ((*stack)->b->nbr < (*stack)->a->nbr)
-		push_left(&*stack);
-	while ((*stack)->b)
-	{
-		while ((*stack)->b->nbr !> (*stack)->a->nbr
-			&& (*stack)->b->nbr !< (*stack)->a->next->nbr)
-		{
-			rra(&*stack);
-			ft_putendl("rra");
-		}
-		pa(&*stack);
-		ft_putendl("pa");
-	}
-}
+// example
+//a	b
+//-	-
+//1	6
+//2	4
+//3
+//5
+//7
+
+//6 4
+//7
+//1
+//2
+//3
+//5
+
+//rra
+//pa

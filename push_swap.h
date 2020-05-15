@@ -13,9 +13,6 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include "libft/libft.h"
-# define ERROR_EXIT {ft_putstr("Error\n"); exit(1);}
-# define OK {ft_putstr("OK\n"); exit(1);}
-# define KO {ft_putstr("KO\n"); exit(1);}
 
 typedef struct	s_ilist
 {
@@ -36,6 +33,11 @@ int				test_stack(t_stack *stack);
 int				test_a_sorted(t_stack *stack);
 int				test_b_sorted(t_stack *stack);
 int				list_size(t_stack *stack);
+int				rate_position(t_stack **stack, int number, int side);
+void			sort(t_stack **stack);
+void			merge(t_stack **stack);
+void			check_top(t_stack **stack);
+void			check_bottom(t_stack **stack);
 void			shift_right(t_stack **stack);
 void			shift_left(t_stack **stack);
 void			read_cmd(t_stack **stack);

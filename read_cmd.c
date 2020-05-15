@@ -37,13 +37,17 @@ void	do_cmd(t_stack **stack, char *cmd)
 	else if (strcmp("rrr", cmd) == 0)
 		rrr(&*stack);
 	else
-		ERROR_EXIT;
+		ft_putendl("Error: bad command");
 }
 
 void	read_cmd(t_stack **stack)
 {
 	char	*cmd;
 
-	while (get_next_line(1, &cmd))
+	while (get_next_line(0, &cmd) > 0) //was 1 on mac
+	{
+		if (strcmp("", cmd) == 0)//added the if in windows
+			break;
 		do_cmd(&*stack, cmd);
+	}
 }

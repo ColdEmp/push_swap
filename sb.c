@@ -28,6 +28,6 @@ void	sb(t_stack **stack)
 
 void	sb_wo(t_stack **stack)
 {
-	sb(&*stack);
 	ft_putendl("sb");
+	sb(&*stack);
 }

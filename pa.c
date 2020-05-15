@@ -25,6 +25,6 @@ void	pa(t_stack **stack)
 
 void	pa_wo(t_stack **stack)
 {
-	pa(&*stack);
 	ft_putendl("pa");
+	pa(&*stack);
 }
