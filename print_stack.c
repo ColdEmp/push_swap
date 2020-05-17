@@ -20,8 +20,8 @@ void	print_stack(t_stack *stack)
 	tempa = stack->a;
 	tempb = stack->b;
 	system("clear");
-	ft_putendl("a\tb");
-	ft_putendl("-\t-");
+	ft_putendl("a\t\tb");
+	ft_putendl("-\t\t-");
 	while (tempa || tempb)
 	{
 		if (tempa)
@@ -29,7 +29,7 @@ void	print_stack(t_stack *stack)
 			ft_putstr(ft_itoa(tempa->nbr));
 			tempa = tempa->next;
 		}
-		ft_putstr("\t");
+		ft_putstr("\t\t");
 		if (tempb)
 		{
 			ft_putstr(ft_itoa(tempb->nbr));

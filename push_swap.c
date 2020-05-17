@@ -27,7 +27,7 @@ int		main(int argc, char *argv[])
 		else
 			stack = populate_stack(argv + 1);
 		sort(&stack);
-		print_stack(stack);
+		//print_stack(stack); // !!! comment out !!!
 	}
 	return (0);
 }

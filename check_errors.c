@@ -12,6 +12,26 @@
 
 #include "push_swap.h"
 
+void	check_int_size(char **array)
+{
+	int	i;
+	long long max;
+	long long min;
+
+	max = 2147483647;
+	min = -2147483648;
+	i = 0;
+	while (array[i])
+	{
+		if (ft_atoi_LL(array[i]) > max || ft_atoi_LL(array[i]) < min)
+		{
+			ft_putstr_fd("Error\n", 2); // : some arguments are bigger or smaller than an integer
+			exit(1);
+		}
+		i++;
+	}
+}
+
 void	check_dup(char **array)
 {
 	int	i;
@@ -25,7 +45,7 @@ void	check_dup(char **array)
 		{
 			if (ft_atoi(array[i]) == ft_atoi(array[j]))
 			{
-				ft_putendl("Error: found duplicate");
+				ft_putstr_fd("Error\n", 2); // : there are duplicates
 				exit(1);
 			}
 			j++;
@@ -50,7 +70,7 @@ void	check_valid_input(char **array)
 					ft_isdigit(array[i][j + 1]) != 1)
 					|| (j > 0 && ft_isdigit(array[i][j]) != 1))
 			{
-				ft_putendl("Error: not a valid input");
+				ft_putstr_fd("Error\n", 2); // : some arguments are not integers
 				exit(1);
 			}
 			j++;
@@ -62,5 +82,6 @@ void	check_valid_input(char **array)
 void	check_errors(char **array)
 {
 	check_valid_input(array);
+	check_int_size(array);
 	check_dup(array);
 }

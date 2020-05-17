@@ -18,7 +18,7 @@ int	test_stack(t_stack *stack)
 
 	temp = stack->a;
 	if (stack->b != NULL)
-		return (-1);
+		return (0);
 	while (temp->next)
 	{
 		if (temp->nbr > (temp->next)->nbr)

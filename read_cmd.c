@@ -12,7 +12,13 @@
 
 #include "push_swap.h"
 
-void	do_cmd(t_stack **stack, char *cmd)
+void error(void)
+{
+	ft_putstr_fd("Error\n", 2); // : an instruction doesn't exist and/or is incorrectly formatted
+	exit(1);
+}
+
+void do_cmd(t_stack **stack, char *cmd)
 {
 	if (strcmp("sa", cmd) == 0)
 		sa(&*stack);
@@ -37,19 +43,18 @@ void	do_cmd(t_stack **stack, char *cmd)
 	else if (strcmp("rrr", cmd) == 0)
 		rrr(&*stack);
 	else
-		ft_putendl("Error: bad command");
+		error(); // line 24
 }
 
-void	read_cmd(t_stack **stack)
+void read_cmd(t_stack **stack)
 {
-	char	*cmd;
+	char *cmd;
 
-	print_stack(*stack);
-	while (get_next_line(0, &cmd) > 0) //was 1 on mac
+	// print_stack(*stack);
+	while (get_next_line(0, &cmd) > 0) // !!! on mac it was: while (get_next_line(1, &cmd) > 0) !!!
 	{
-		if (strcmp("", cmd) == 0) //added the if in windows
-			break;
+		// ft_putendl(cmd);
 		do_cmd(&*stack, cmd);
-		print_stack(*stack);
+		// print_stack(*stack);
 	}
 }

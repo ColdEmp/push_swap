@@ -29,6 +29,7 @@ typedef struct	s_stack
 t_ilist			*ilistnew(int nbr);
 t_stack			*stacknew(void);
 t_stack			*populate_stack(char **array);
+long long		ft_atoi_LL(char const *s);
 int				test_stack(t_stack *stack);
 int				test_a_sorted(t_stack *stack);
 int				test_b_sorted(t_stack *stack);
