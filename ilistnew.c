@@ -18,8 +18,8 @@ t_ilist	*ilistnew(int nbr)
 
 	if (!(temp = (t_ilist*)malloc(sizeof(t_ilist))))
 		return (NULL);
-	if (!(temp->nbr = (int)malloc(sizeof(int))))
-		return (NULL);
+	// if (!(temp->nbr = (int)malloc(sizeof(int))))
+	// 	return (NULL);
 	temp->nbr = nbr;
 	temp->next = NULL;
 	return (temp);
