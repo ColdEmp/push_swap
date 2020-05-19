@@ -16,18 +16,25 @@ t_stack	*populate_stack(char **array)
 {
 	t_stack	*stack;
 	t_ilist	*temp;
+	int		len;
 	int		i;
+	int		*int_array;
 
 	check_errors(array);
+	len = 0;
+	while (array[len])
+		len++;
+	int_array = int_array(array, len);
 	stack = stacknew();
-	stack->a = ilistnew(ft_atoi(array[0]));
+	stack->a->nbr = int_array[0];//stack->a = ilistnew(int_array[0]);
 	temp = stack->a;
 	i = 1;
-	while (array[i])
+	while (i < len)
 	{
-		temp->next = ilistnew(ft_atoi(array[i]));
+		temp->next = ilistnew(int_array[i]);
 		temp = temp->next;
 		i++;
 	}
+	index_list(&stack, int_array, len);
 	return (stack);
 }
