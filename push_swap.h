@@ -22,8 +22,8 @@ typedef struct	s_ilist
 
 typedef struct	s_stack
 {
-	t_ilist	*a;
-	t_ilist	*b;
+	struct s_ilist	*a;
+	struct s_ilist	*b;
 }				t_stack;
 
 t_ilist			*ilistnew(int nbr);
@@ -35,9 +35,12 @@ int				test_a_sorted(t_stack *stack);
 int				test_b_sorted(t_stack *stack);
 int				list_size(t_stack *stack);
 int				rate_position(t_stack **stack, int number, int side);
-int 			*int_array(char  **array, int len)
-void    		index_list(t_stack **stack, int *array, int len)
+int 			*int_array(char  **array, int len);
+void    		index_list(t_stack **stack, int *array, int len);
 void			sort(t_stack **stack);
+void			sort_right_left(t_stack **stack);
+void			reverse_rotate(t_stack **stack);
+void    		rotate(t_stack **stack);
 void			merge(t_stack **stack);
 void			check_top(t_stack **stack);
 void			check_bottom(t_stack **stack);
