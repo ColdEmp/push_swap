@@ -29,6 +29,7 @@ FILES =	ft_atoi.c \
 		ft_strlowcase.c \
 		ft_strcapitalize.c \
 		ft_strdup.c \
+		ft_strndup.c \
 		ft_itoa.c \
 		ft_strnstr.c \
 		ft_isupper.c \
@@ -89,8 +90,8 @@ $(NAME):
 	gcc -c -Wall -Wextra -Werror $(FILES)
 	ar rc $(NAME) *.o
 	ranlib $(NAME)
-clean:
 	rm -f *.o
+clean:
 fclean: clean
 	rm -f $(NAME)
 re: fclean all
