@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	ra(t_stack **stack)
+void	ra(t_stack **stack) // push up, top goes to bottom
 {
 	t_ilist *node_1;
 	t_ilist *node_2;

@@ -15,13 +15,17 @@
 int	test_a_sorted(t_stack *stack)
 {
 	t_ilist *temp;
+	int		step;
 
+	step = 0;
 	if (stack->a)
 	{
 		temp = stack->a;
 		while (temp->next)
 		{
 			if (temp->nbr > (temp->next)->nbr)
+				step++;
+			if (step > 1)
 				return (0);
 			temp = temp->next;
 		}
