@@ -26,22 +26,3 @@ void merge(t_stack **stack)
 		rra_wo(&*stack);
 	// else if ((*stack)->b->nbr > (*stack)->a->nbr)
 }
-
-// example
-//a	b
-//-	-
-//1	6
-//2	4
-//3
-//5
-//7
-
-//6 4
-//7
-//1
-//2
-//3
-//5
-
-//rra
-//pa

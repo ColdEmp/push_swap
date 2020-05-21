@@ -35,7 +35,7 @@ int				test_a_sorted(t_stack *stack);
 int				test_b_sorted(t_stack *stack);
 int				list_size(t_stack *stack);
 int				rate_position(t_stack **stack, int number, int side);
-int 			*int_array(char  **array, int len);
+int 			*new_int_array(char  **array, int len);
 void    		index_list(t_stack **stack, int *array, int len);
 void			sort(t_stack **stack);
 void			sort_right_left(t_stack **stack);

@@ -19,7 +19,7 @@ void	print_stack(t_stack *stack)
 
 	tempa = stack->a;
 	tempb = stack->b;
-	system("clear");
+	// system("clear");
 	ft_putendl("a\t\tb");
 	ft_putendl("-\t\t-");
 	while (tempa || tempb)

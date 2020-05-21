@@ -16,16 +16,18 @@ int	test_a_sorted(t_stack *stack)
 {
 	t_ilist *temp;
 	int		step;
+	int		first;
 
 	step = 0;
 	if (stack->a)
 	{
 		temp = stack->a;
+		first = temp->nbr;
 		while (temp->next)
 		{
-			if (temp->nbr > (temp->next)->nbr)
+			if (temp->nbr > temp->next->nbr)
 				step++;
-			if (step > 1)
+			if (step > 1 || (step > 0 && temp->next->nbr > first))
 				return (0);
 			temp = temp->next;
 		}

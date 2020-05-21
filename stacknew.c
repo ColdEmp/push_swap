@@ -18,6 +18,10 @@ t_stack	*stacknew(void)
 
 	if (!(temp = (t_stack*)malloc(sizeof(t_stack))))
 		return (NULL);
+	// free(temp->a->next);
+	// free(&(temp->a->nbr));
+	// free(temp->b->next);
+	// free(&(temp->b->nbr));
 	temp->a = NULL;
 	temp->b = NULL;
 	return (temp);

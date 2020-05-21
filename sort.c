@@ -14,7 +14,7 @@ void    sort_a(t_stack **stack)
                 enda = enda->next;
             if ((*stack)->a->next->nbr > enda->nbr && (*stack)->a->nbr < enda->nbr)
                 pb_wo(&*stack);
-            else
+            else if (test_a_sorted(*stack) != 1)
                 ra_wo(&*stack);
         }
         else
@@ -25,6 +25,9 @@ void    sort_a(t_stack **stack)
 void    sort(t_stack **stack)
 {
     sort_a(stack);
+    while (test_stack(*stack) != 1)
+        merge(&*stack);
+    // print_stack(*stack);
 }
 
     // sort_right_left(&*stack);

@@ -2,7 +2,7 @@
 
 int find_smallest(t_stack *stack)
 {
-    t_ilist a;
+    t_ilist *a;
     int     len;
     int     i;
 

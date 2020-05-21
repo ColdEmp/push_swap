@@ -29,5 +29,8 @@ int		main(int argc, char *argv[])
 		sort(&stack);
 		//print_stack(stack); // !!! comment out !!!
 	}
+	// char	**array2 = (char *[]){"1", "3", "2"};
+	// t_stack *stack2 = populate_stack(array2);
+	// sort(&stack2);
 	return (0);
 }

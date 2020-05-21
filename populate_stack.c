@@ -24,9 +24,9 @@ t_stack	*populate_stack(char **array)
 	len = 0;
 	while (array[len])
 		len++;
-	int_array = int_array(array, len);
+	int_array = new_int_array(array, len);
 	stack = stacknew();
-	stack->a->nbr = int_array[0];//stack->a = ilistnew(int_array[0]);
+	stack->a = ilistnew(int_array[0]);
 	temp = stack->a;
 	i = 1;
 	while (i < len)
