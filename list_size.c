@@ -12,17 +12,18 @@
 
 #include "push_swap.h"
 
-int		list_size(t_stack *stack)
+int		list_size(t_ilist *list)
 {
 	int		i;
 	t_ilist	*temp;
 
 	i = 0;
-	temp = stack->a;
+	temp = list;
 	while (temp)
 	{
-		temp = temp->next;
 		i++;
+		temp = temp->next;
 	}
 	return (i);
 }
+// returns the lentgth of the list
