@@ -16,7 +16,7 @@ LIBFILE = libft/libft.a
 CFILES = checker.c
 PSFILES = push_swap.c
 SRC = check_bottom.c check_errors.c check_top.c current_position.c \
-	find_route.c ft_atoi_LL.c ilistnew.c \
+	filter.c find_route.c ft_atoi_LL.c ilistnew.c \
 	index_list.c is_num_in.c is_range_in.c list_size.c merge.c new_int_array.c\
 	populate_stack.c print_stack.c rate_position.c read_cmd.c \
 	reverse_rotate.c rotate.c shift_left.c shift_right.c\
@@ -27,9 +27,9 @@ all: $(LIBFILE) $(CNAME) $(PSNAME)
 $(LIBFILE):
 	make -C libft
 $(CNAME): $(CFILES)
-	gcc -Wall -Wextra -Werror $(CFILES) $(SRC) $(LIBFILE) -o $(CNAME)
+	gcc -g -Wall -Wextra -Werror $(CFILES) $(SRC) $(LIBFILE) -o $(CNAME)
 $(PSNAME): $(PSFILES)
-	gcc -Wall -Wextra -Werror $(PSFILES) $(SRC) $(LIBFILE) -o $(PSNAME)
+	gcc -g -Wall -Wextra -Werror $(PSFILES) $(SRC) $(LIBFILE) -o $(PSNAME)
 clean:
 	make -C libft clean
 libft_fclean:
