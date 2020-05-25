@@ -10,7 +10,7 @@ int *new_int_array(char **array, int len)
     i = 0;
     while (i < len)
     {
-        int_array[i] = atoi(array[i]);
+        int_array[i] = ft_atoi(array[i]);
         i++;
     }
     return (int_array);

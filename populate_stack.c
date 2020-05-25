@@ -36,5 +36,6 @@ t_stack	*populate_stack(char **array)
 		i++;
 	}
 	index_list(&stack, int_array, len);
+	free(int_array);
 	return (stack);
 }
