@@ -20,27 +20,27 @@ void error(void)
 
 void do_cmd(t_stack **stack, char *cmd)
 {
-	if (strcmp("sa", cmd) == 0)
+	if (ft_strcmp("sa", cmd) == 0)
 		sa(stack);
-	else if (strcmp("sb", cmd) == 0)
+	else if (ft_strcmp("sb", cmd) == 0)
 		sb(stack);
-	else if (strcmp("ss", cmd) == 0)
+	else if (ft_strcmp("ss", cmd) == 0)
 		ss(stack);
-	else if (strcmp("pa", cmd) == 0)
+	else if (ft_strcmp("pa", cmd) == 0)
 		pa(stack);
-	else if (strcmp("pb", cmd) == 0)
+	else if (ft_strcmp("pb", cmd) == 0)
 		pb(stack);
-	else if (strcmp("ra", cmd) == 0)
+	else if (ft_strcmp("ra", cmd) == 0)
 		ra(stack);
-	else if (strcmp("rb", cmd) == 0)
+	else if (ft_strcmp("rb", cmd) == 0)
 		rb(stack);
-	else if (strcmp("rr", cmd) == 0)
+	else if (ft_strcmp("rr", cmd) == 0)
 		rr(stack);
-	else if (strcmp("rra", cmd) == 0)
+	else if (ft_strcmp("rra", cmd) == 0)
 		rra(stack);
-	else if (strcmp("rrb", cmd) == 0)
+	else if (ft_strcmp("rrb", cmd) == 0)
 		rrb(stack);
-	else if (strcmp("rrr", cmd) == 0)
+	else if (ft_strcmp("rrr", cmd) == 0)
 		rrr(stack);
 	else
 		error(); // line 24
