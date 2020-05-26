@@ -23,6 +23,7 @@ int		main(int argc, char *argv[])
 		{
 			array = ft_strsplit(argv[1], ' ');
 			stack = populate_stack(array);
+			free(array);
 		}
 		else
 			stack = populate_stack(argv + 1);
@@ -32,5 +33,6 @@ int		main(int argc, char *argv[])
 	// char	**array2 = (char *[]){"1", "3", "2"};
 	// t_stack *stack2 = populate_stack(array2);
 	// sort(&stack2);
+	free_stack(&stack);
 	return (0);
 }

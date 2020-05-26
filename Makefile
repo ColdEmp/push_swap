@@ -16,7 +16,7 @@ LIBFILE = libft/libft.a
 CFILES = checker.c
 PSFILES = push_swap.c
 SRC = check_bottom.c check_errors.c check_top.c current_position.c \
-	filter.c find_route.c ft_atoi_LL.c ilistnew.c \
+	filter.c final_rotate.c find_route.c free_stack.c ft_atoi_LL.c ilistnew.c \
 	index_list.c is_num_in.c is_range_in.c list_size.c merge.c new_int_array.c\
 	populate_stack.c print_stack.c rate_position.c read_cmd.c \
 	reverse_rotate.c rotate.c shift_left.c shift_right.c\

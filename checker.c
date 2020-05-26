@@ -23,6 +23,7 @@ int		main(int argc, char *argv[])
 		{
 			array = ft_strsplit(argv[1], ' ');
 			stack = populate_stack(array);
+			free(array);
 		}
 		else
 			stack = populate_stack(argv + 1);

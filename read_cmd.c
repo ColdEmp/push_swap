@@ -21,27 +21,27 @@ void error(void)
 void do_cmd(t_stack **stack, char *cmd)
 {
 	if (strcmp("sa", cmd) == 0)
-		sa(&*stack);
+		sa(stack);
 	else if (strcmp("sb", cmd) == 0)
-		sb(&*stack);
+		sb(stack);
 	else if (strcmp("ss", cmd) == 0)
-		ss(&*stack);
+		ss(stack);
 	else if (strcmp("pa", cmd) == 0)
-		pa(&*stack);
+		pa(stack);
 	else if (strcmp("pb", cmd) == 0)
-		pb(&*stack);
+		pb(stack);
 	else if (strcmp("ra", cmd) == 0)
-		ra(&*stack);
+		ra(stack);
 	else if (strcmp("rb", cmd) == 0)
-		rb(&*stack);
+		rb(stack);
 	else if (strcmp("rr", cmd) == 0)
-		rr(&*stack);
+		rr(stack);
 	else if (strcmp("rra", cmd) == 0)
-		rra(&*stack);
+		rra(stack);
 	else if (strcmp("rrb", cmd) == 0)
-		rrb(&*stack);
+		rrb(stack);
 	else if (strcmp("rrr", cmd) == 0)
-		rrr(&*stack);
+		rrr(stack);
 	else
 		error(); // line 24
 }

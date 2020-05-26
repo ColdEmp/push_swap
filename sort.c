@@ -1,5 +1,26 @@
 #include "push_swap.h"
 
+void sort_a2(t_stack **stack)
+{
+    t_ilist *enda;
+
+    while ((*stack)->b)
+    {
+        enda = (*stack)->a;
+        while (enda && enda->next)
+            enda = enda->next;
+        if (enda->nbr > (*stack)->a->nbr && (*stack)->a->nbr > 0)
+            merge(stack, 0, (*stack)->a->nbr - 1);
+        else if (enda->nbr > (*stack)->a->nbr || (*stack)->a->nbr == enda->nbr + 1)
+            ra_wo(stack);
+        else if ((*stack)->b->nbr == (*stack)->a->nbr - 1)
+            pa_wo(stack);
+        else
+            rb_wo(stack);
+    }
+    final_rotate(stack);
+}
+
 void sort_a(t_stack **stack)
 {
     t_ilist *enda;
@@ -20,13 +41,12 @@ void sort_a(t_stack **stack)
         else
             ra_wo(&*stack);
     }
+    if ((*stack)->a->nbr != 0 || (*stack)->b)
+        sort_a2(stack);
 }
 
-void sort_b(t_stack **stack)
+void sort_b(t_stack **stack, int len)
 {
-    int len;
-
-    len = list_size((*stack)->a);
     filter(stack, 0, len / 2 - 1);
     merge(stack, 0, len / 2 - 1);
     while ((*stack)->a->nbr < len / 2)
@@ -38,11 +58,8 @@ void sort_b(t_stack **stack)
         ra_wo(stack);
 }
 
-void sort_c(t_stack **stack)
+void sort_c(t_stack **stack, int len)
 {
-    int len;
-
-    len = list_size((*stack)->a);
     filter(stack, 0, len / 4 - 1);
     merge(stack, 0, len / 4 - 1);
     while ((*stack)->a->nbr < len / 4)
@@ -59,10 +76,6 @@ void sort_c(t_stack **stack)
     while ((*stack)->a->nbr != len / 2 - 1)
         rra_wo(stack);
     ra_wo(stack);
-    // while ((*stack)->a->nbr != 0)
-    //     ra_wo(stack);
-    // while ((*stack)->a->nbr < len / 2)
-    //     ra_wo(stack);
     merge(stack, len / 2, len * 3 / 4 - 1);
     while ((*stack)->a->nbr < len * 3 / 4 && (*stack)->a->nbr >= len / 2)
         ra_wo(stack);
@@ -75,7 +88,15 @@ void sort_c(t_stack **stack)
 
 void sort(t_stack **stack)
 {
-    sort_c(stack);
+    int len;
+
+    len = list_size((*stack)->a);
+    if (len < 11)
+        sort_a(stack);
+    else if (len < 101)
+        sort_b(stack, len); 
+    else
+        sort_c(stack, len);
     // print_stack(*stack);
 }
 
