@@ -93,7 +93,7 @@ void sort(t_stack **stack)
     len = list_size((*stack)->a);
     if (len < 11)
         sort_a(stack);
-    else if (len < 101)
+    else if (len < 100)
         sort_b(stack, len); 
     else
         sort_c(stack, len);
