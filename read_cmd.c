@@ -50,11 +50,10 @@ void read_cmd(t_stack **stack)
 {
 	char *cmd;
 
-	// print_stack(*stack);
 	while (get_next_line(0, &cmd) > 0) // !!! on mac it was: while (get_next_line(1, &cmd) > 0) !!!
 	{
-		// ft_putendl(cmd);
 		do_cmd(&*stack, cmd);
-		// print_stack(*stack);
+		free(cmd);
+		cmd = NULL;
 	}
 }
